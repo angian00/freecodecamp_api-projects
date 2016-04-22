@@ -3,7 +3,7 @@
 var useragent = require('useragent')
 
 module.exports = function (req, res) {
-	console.log(req.headers)
+	//console.log(req.headers)
 	
 	var osStr = useragent.parse(req.headers["user-agent"]).os.toString();
 	
