@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>angian FreeCodeCamp - Url Shortener</title>
+	</head>
+
+	<body>
+		<h1>Url Shortener Microservice</h1>
+		
+		<p>User Stories:</p>
+		<ol>
+			<li>I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.</li>
+			<li>If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.</li>
+			<li>When I visit that shortened URL, it will redirect me to my original link.</li>
+		</ol>
+		
+		<h2>Creation</h2>
+		<h3>Test form</h3>
+		<form method="POST" action="/url-shortener/api">
+			<input type="text" name="originalUrl" value="prova"></input>
+			<button type="submit">Submit</button>
+		</form>
+		
+		<p>Sends <code>HTTP POST /url-shortener/api originalUrl=http://...</code></p>
+		
+		<h3>Return value</h3>
+		<code>{"shortenedUrl":"0"}</code>
+
+		<h3>Retrieval</h3>
+		<a href="https://freecodecamp-api-projects-angian.c9users.io/url-shortener/api/0"><code>https://freecodecamp-api-projects-angian.c9users.io/url-shortener/api/0</code></a>
+		
+		<p><i>Redirects to <code>http://...</code></i></p>
+		
+		<p></p>
+		<h2 style="color: red">NB</h2>
+		<strong style="color: red">Shortened URLs are stored in-memory, hence they are reset between server restarts.</strong>
+	</body>
+
+</html>
