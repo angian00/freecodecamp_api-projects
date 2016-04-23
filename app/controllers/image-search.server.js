@@ -13,6 +13,7 @@ module.exports = {
 	
 		updateLatestQueries(req.params.keyword)
 		
+		//reads Google API credentials from .env file in root dir
 		var apiKey = process.env.IMAGESEARCH_GOOGLE_API_KEY
 		var apiCx = process.env.IMAGESEARCH_GOOGLE_CSE_CX
 
