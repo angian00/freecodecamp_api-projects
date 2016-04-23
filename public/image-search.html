@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>angian FreeCodeCamp - Image Search Abstraction Layer</title>
+	</head>
+
+	<body>
+		<h1>Image Search Abstraction Layer</h1>
+		
+		<p>User Stories:</p>
+		<ol>
+			<li>I can get the image URLs, alt text and page urls for a set of images relating to a given search string.</li>
+			<li>I can paginate through the responses by adding a ?offset=2 parameter to the URL.</li>
+			<li>I can get a list of the most recently submitted search strings.</li>
+		</ol>
+		
+		<h2>Example usage</h2>
+		<h3>Keywork search</h3>
+		<a href="https://freecodecamp-api-projects-angian.c9users.io/image-search/api/search/lions?offset=5"><code>https://freecodecamp-api-projects-angian.c9users.io/image-search/api/search/lions?offset=5</code></a></li>
+
+		<br>
+		<code>[{"imageUrl":"http://kids.nationalgeographic.com/content/dam/kids/photos/articles/Nature/Q-Z/10%20Cool%20Things%20about%20Lions/cool-things-lions-9.jpg","altText":"Lion","pageUrl":"http://kids.nationalgeographic.com/animals/lion/"},{"imageUrl":"https://upload.wikimedia.org/wikipedia/commons/a/a1/Lions_Family_Portrait_Masai_Mara.jpg","altText":"Lion - Wikipedia, the free encyclopedia","pageUrl":"https://en.wikipedia.org/wiki/Lion"},{"imageUrl":"http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/H-P/lion-male-roar.jpg","altText":"Lion","pageUrl":"http://kids.nationalgeographic.com/animals/lion/"},{"imageUrl":"http://www.awf.org/sites/default/files/media/gallery/wildlife/Lion/lion_Theodore_mattis.jpg?itok=lAT56K6j","altText":"Lion | African Wildlife Foundation","pageUrl":"http://www.awf.org/wildlife-conservation/lion"},{"imageUrl":"https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg","altText":"Lion - Wikipedia, the free encyclopedia","pageUrl":"https://en.wikipedia.org/wiki/Lion"},{"imageUrl":"http://www.awf.org/sites/default/files/media/gallery/wildlife/Lion/Federico_Veronesi_2009-01-28%20Masai%20Mara_4728.jpg?itok=96CysP6Y","altText":"Lion | African Wildlife Foundation","pageUrl":"http://www.awf.org/wildlife-conservation/lion"},{"imageUrl":"http://cbs.umn.edu/sites/cbs.umn.edu/files/public/african_lion_king-wide_1.jpg","altText":"UMN Lion Center | College of Biological Sciences","pageUrl":"http://cbs.umn.edu/research/labs/lionresearch"},{"imageUrl":"http://animals.sandiegozoo.org/sites/default/files/juicebox_slides/lion_01.jpg","altText":"Lion | San Diego Zoo Animals","pageUrl":"http://animals.sandiegozoo.org/animals/lion"},{"imageUrl":"http://animaliaz-life.com/data_images/lion/lion3.jpg","altText":"Lion. Lion pictures. Facts about lions","pageUrl":"http://animaliaz-life.com/lion.html"},{"imageUrl":"http://thumbs.media.smithsonianmag.com//filer/two-male-lions-Kenya-631.jpg__800x600_q85_crop.jpg","altText":"The Truth About Lions | Science | Smithsonian","pageUrl":"http://www.smithsonianmag.com/science-nature/the-truth-about-lions-11558237/"}]</code>
+		
+		<h3>Latest searches</h3>
+		<a href="https://freecodecamp-api-projects-angian.c9users.io/image-search/api/latest"><code>https://freecodecamp-api-projects-angian.c9users.io/image-search/api/latest</code></a></li>
+
+		<br>
+		<code>[{"query":"whales","ts":"2016-04-23T19:08:49.525Z"},{"query":"monkeys","ts":"2016-04-23T19:08:30.971Z"},{"query":"monkeys","ts":"2016-04-23T19:08:10.490Z"},{"query":"lions","ts":"2016-04-23T19:08:00.377Z"},{"query":"lions","ts":"2016-04-23T19:07:38.126Z"}]</code>
+		
+	</body>
+
+</html>

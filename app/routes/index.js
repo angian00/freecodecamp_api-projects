@@ -8,6 +8,9 @@ var path = process.cwd();
 var getTs = require(path + '/app/controllers/ts-ms.server.js');
 var reqHeaderParser = require(path + '/app/controllers/request-header-parser.server.js');
 var urlShortener = require(path + '/app/controllers/url-shortener.server.js');
+var imgSearch = require(path + '/app/controllers/image-search.server.js');
+
+
 
 module.exports = function (app, passport) {
 	app.route('/')
@@ -50,6 +53,22 @@ module.exports = function (app, passport) {
 	app.route('/url-shortener/api/:shortUrl')
 		.get(function (req, res) {
 			urlShortener.retrieveShortcut(req, res);
+		});
+
+
+	app.route('/image-search')
+		.get(function (req, res) {
+			res.sendFile(path + '/public/image-search.html');
+		});
+
+	app.route('/image-search/api/search/:keyword')
+		.get(function (req, res) {
+			imgSearch.search(req, res);
+		});
+
+	app.route('/image-search/api/latest')
+		.get(function (req, res) {
+			imgSearch.latest(req, res);
 		});
 
 };
