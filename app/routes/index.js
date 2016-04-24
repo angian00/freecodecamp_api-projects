@@ -1,14 +1,16 @@
 'use strict';
 
 var bodyParser = require("body-parser")
+var multer = require("multer")
 var bp = bodyParser();
 
 var path = process.cwd();
 
-var getTs = require(path + '/app/controllers/ts-ms.server.js');
+var getTs           = require(path + '/app/controllers/ts-ms.server.js');
 var reqHeaderParser = require(path + '/app/controllers/request-header-parser.server.js');
-var urlShortener = require(path + '/app/controllers/url-shortener.server.js');
-var imgSearch = require(path + '/app/controllers/image-search.server.js');
+var urlShortener    = require(path + '/app/controllers/url-shortener.server.js');
+var imgSearch       = require(path + '/app/controllers/image-search.server.js');
+var fileMetadata    = require(path + '/app/controllers/file-metadata.server.js');
 
 
 
@@ -69,6 +71,17 @@ module.exports = function (app, passport) {
 	app.route('/image-search/api/latest')
 		.get(function (req, res) {
 			imgSearch.latest(req, res);
+		});
+
+
+	app.route('/file-metadata')
+		.get(function (req, res) {
+			res.sendFile(path + '/public/file-metadata.html');
+		});
+
+	app.route('/file-metadata/api')
+		.post(multer().single("upFile"), function (upFile, req, res) {
+			fileMetadata(upFile, req, res);
 		});
 
 };

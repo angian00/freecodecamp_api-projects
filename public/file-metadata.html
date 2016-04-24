@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>angian FreeCodeCamp - File Metadata Microservice</title>
+		
+		<script>
+			document.addEventListener("DOMContentLoaded", function(event) { 
+				var form = document.forms.namedItem("fileinfo");
+				form.addEventListener('submit', function(ev) {
+				
+					var oOutput = document.querySelector("#responseField"),
+					oData = new FormData(form);
+
+					var oReq = new XMLHttpRequest();
+					oReq.open("POST", "/file-metadata/api", true);
+					oReq.onload = function(oEvent) {
+						if (oReq.status == 200) {
+							oOutput.innerHTML = oReq.responseText;
+						} else {
+							oOutput.innerHTML = "Error " + oReq.status + " occurred.";
+						}
+					};
+					
+					oReq.send(oData);
+					ev.preventDefault();
+				}, false);
+			});
+		</script>
+		
+	</head>
+
+	<body>
+		<h1>File Metadata Microservice</h1>
+		
+		<p>User Stories:</p>
+		<ol>
+			<li>I can submit a FormData object that includes a file upload.</li>
+			<li>When I submit something, I will receive the file size in bytes within the JSON response.</li>
+		</ol>
+		
+		<h2>Test form</h2>
+		<form enctype="multipart/form-data" method="POST" name="fileinfo">
+			<fieldset>
+				<label>Upload file:</label>
+				<input type="file" name="upFile" required />
+				<input type="submit" value="Submit" />
+			</fieldset>
+		</form>
+
+		<h2>Response</h2>
+		<code id="responseField"></code>
+	</body>
+
+</html>
